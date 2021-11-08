@@ -2,24 +2,44 @@
   <!-- <counter [count]="initialCount"></counter> -->
 </div>
 
-<app-item-detail [item]='currentItem'></app-item-detail>
+<nav>
+  <ul>
+    <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+    <li><a routerLink="/customer-detail" routerLinkActive="active">Customer</a></li>
 
-<app-item-output (newItemEvent) ="addItem($event)"></app-item-output>
-<ul>
-  <li *ngFor="let item of items">{{item}}</li>
-</ul>
+  </ul>
+<nav>
+<div class="row">
+  <div class="col-md-6">
+
+    <app-item-detail [item]='currentItem'></app-item-detail>
+
+    <app-item-output (newItemEvent) ="addItem($event)"></app-item-output>
+    <ul>
+      <li *ngFor="let item of items">{{item}}</li>
+    </ul>
 
 
-<hr>
+    <hr>
 
-<h2>Input and Output together</h2>
-<p>Open the console to see the EventEmitter at work when you click Delete.</p>
+    <h2>Input and Output together</h2>
+    <p>Open the console to see the EventEmitter at work when you click Delete.</p>
 
-<app-input-output
-  [item] ="currentItem"
-  (deleteRequest)="crossOfItem($event)">
-</app-input-output>
+    <app-input-output
+      [item] ="currentItem"
+      (deleteRequest)="crossOfItem($event)">
+    </app-input-output>
 
-<hr>
+    <hr>
+  </div>
+
+  <div class="col-md-6">
+    <h3>Another Example (Object data passing)</h3>
+    <button (click)="goToAnotherPage()">Try Another Example</button>
+  </div>
+</div>
+
+<app-customer-list></app-customer-list>
+
 
 <router-outlet></router-outlet>

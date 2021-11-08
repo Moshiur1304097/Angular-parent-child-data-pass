@@ -1,0 +1,19 @@
+
+<div>
+    <label for="">Customer No: {{customer.customerNo}}</label>
+</div>
+
+<div style="width: 30%;">
+    <label for="">Customer Name: </label>
+    <input type="text" [(ngModel)]="customer.name">
+    <label for="">Address</label>
+    <input type="text" [(ngModel)] ="customer.address">
+    <label for="">City</label>
+    <input type="text" [(ngModel)] ="customer.city">
+    <label for="">State</label>
+    <input type="text" [(ngModel)] ="customer.state">
+    <label for="">Country</label>
+    <input type="text" [(ngModel)] ="customer.country">
+</div>
+
+<button (click)="update()">Update</button>
